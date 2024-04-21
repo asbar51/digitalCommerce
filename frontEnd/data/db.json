@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "title": "dfqsf",
+      "content": "",
+      "date": "12/12/2023, 10:03:31 AM GMT+1",
+      "id": 1
+    },
+    {
+      "title": "qsfdsd",
+      "content": "",
+      "date": "12/12/2023, 10:04:17 AM GMT+1",
+      "id": 2
+    },
+    {
+      "title": "fqsdfd",
+      "content": "",
+      "date": "12/12/2023, 10:23:23 AM GMT+1",
+      "id": 3
+    },
+    {
+      "title": "fqsdfs",
+      "content": "",
+      "date": "12/12/2023, 10:26:25 AM GMT+1",
+      "id": 4
+    }
+  ]
+}

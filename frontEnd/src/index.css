@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.transition-opacity {
+    transition-property: opacity;
+    transition-duration: 0.5s; /* Adjust the duration as needed */
+    transition-timing-function: ease-in-out; /* Adjust the easing function as needed */
+  }
