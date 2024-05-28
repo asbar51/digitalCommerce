@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const profileApi = createApi({
     reducerPath: 'profileApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:3000/profile',
+        baseUrl: 'http://localhost:4000/profile',
         credentials: 'include'
     }),
     endpoints: (builder) => ({
@@ -25,14 +25,14 @@ export const profileApi = createApi({
             })
         }),
         updateProfile: builder.mutation({
-            query: ({usernameOrg,body}) => ({
+            query: ({ usernameOrg, body }) => ({
                 url: `/update/${usernameOrg}`,
                 method: 'put',
                 body
             })
         }),
         deleteProfile: builder.mutation({
-            query: ({username}) => ({
+            query: ({ username }) => ({
                 url: `/delete/${username}`,
                 method: 'delete'
             })
@@ -47,5 +47,5 @@ export const profileApi = createApi({
     })
 })
 
-export const {useGetProfileQuery,useLoginProfileMutation,useAddProfileMutation,
-    useUpdateProfileMutation,useDeleteProfileMutation,useAddProfileAvatarMutation} = profileApi
+export const { useGetProfileQuery, useLoginProfileMutation, useAddProfileMutation,
+    useUpdateProfileMutation, useDeleteProfileMutation, useAddProfileAvatarMutation } = profileApi

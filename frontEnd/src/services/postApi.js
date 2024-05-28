@@ -1,11 +1,11 @@
-import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const postApi = createApi({
     reducerPath: 'postApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:3000/posts',
+        baseUrl: 'http://localhost:5000/posts',
         credentials: 'include'
-}),
+    }),
     // keepUnusedDataFor:0,
     tagTypes: ['getAllPosts'],
     endpoints: (builder) => ({
@@ -14,10 +14,10 @@ export const postApi = createApi({
             query: (page) => `/page/${page}`
         }),
         getPostsByCategorie: builder.query({
-            query: ({page,categorie}) => `/page/${page}/categorie/${categorie}`
+            query: ({ page, categorie }) => `/page/${page}/categorie/${categorie}`
         }),
         getPostsBySearch: builder.query({
-            query: ({page,categorie,search,minPrice,maxPrice}) => `/page/${page}
+            query: ({ page, categorie, search, minPrice, maxPrice }) => `/page/${page}
             /title/${search}/categorie/${categorie}/minPrice/${minPrice}/maxPrice/${maxPrice}`
         }),
         // getAllPosts: builder.query({
@@ -25,7 +25,7 @@ export const postApi = createApi({
         //         return `/page/${page}/categorie/${categorie}/title/${title}/minPrice/${minPrice}/maxPrice/${maxPrice}`;
         //     }
         // }),
-        
+
         getStore: builder.query({
             query: (username) => `/store/${username}`
         }),
@@ -46,10 +46,10 @@ export const postApi = createApi({
             }),
         }),
         UpdatePost: builder.mutation({
-            query: ({id,formData}) => ({
+            query: ({ id, formData }) => ({
                 url: `/${id}`,
                 method: 'PUT',
-                body : formData
+                body: formData
             })
         }),
         addToCart: builder.mutation({
@@ -70,7 +70,7 @@ export const postApi = createApi({
             })
         }),
         order: builder.mutation({
-            query: ({id,body}) => ({
+            query: ({ id, body }) => ({
                 url: `/order/${id}`,
                 method: 'post',
                 body
@@ -82,14 +82,14 @@ export const postApi = createApi({
             })
         }),
         addReview: builder.mutation({
-            query: ({PostId,body}) => ({
+            query: ({ PostId, body }) => ({
                 url: `/review/add/${PostId}`,
                 method: 'post',
                 body
             })
         }),
         updateReview: builder.mutation({
-            query: ({PostId,body}) => ({
+            query: ({ PostId, body }) => ({
                 url: `/review/update/${PostId}`,
                 method: 'post',
                 body
@@ -104,7 +104,7 @@ export const postApi = createApi({
     })
 })
 
-export const {useGetAllPostsQuery,useGetPostQuery,useAddPostMutation,useDeletePostMutation,
-    useUpdatePostMutation,useGetStoreQuery,useAddToCartMutation,useGetFromCartQuery,
-    useRemoveFromCartMutation,useOrderMutation,useGetOrdersQuery,useGetPostsByCategorieQuery,
-    useGetPostsBySearchQuery,useAddReviewMutation,useUpdateReviewMutation,useDeleteReviewMutation} = postApi
+export const { useGetAllPostsQuery, useGetPostQuery, useAddPostMutation, useDeletePostMutation,
+    useUpdatePostMutation, useGetStoreQuery, useAddToCartMutation, useGetFromCartQuery,
+    useRemoveFromCartMutation, useOrderMutation, useGetOrdersQuery, useGetPostsByCategorieQuery,
+    useGetPostsBySearchQuery, useAddReviewMutation, useUpdateReviewMutation, useDeleteReviewMutation } = postApi
