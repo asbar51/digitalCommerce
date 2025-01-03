@@ -38,12 +38,14 @@ Ensure the following tools are installed:
    cd digitalCommerce
 Install Dependencies:
 
-### ⚙️ Frontend:
-cd frontend
-npm install
-npm run dev
+1. **Frontend**:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
 
-### ⚙️ Backend:
-cd ../server
-npm install
-npm run start
+1. **Backend**:
+   ```bash
+   cd ../server
+   npm install
+   npm run start
