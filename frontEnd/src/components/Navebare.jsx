@@ -171,9 +171,9 @@ const Navebare = () => {
                 <DropdownMenuSeparator />
                 
                 <DropdownMenuItem>
-                  <Link to={'/profile'} className={`flex font-bold w-100`}>
+                  <Link to={`/store/${profile?.profile?.username}`} className={`flex font-bold w-100`}>
                     <ListOrderedIcon className="mr-2 h-4 w-4" />
-                    Options
+                    My Store
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>

@@ -31,6 +31,7 @@ const CheckoutPage = () => {
     //     })}
     //   }
       console.log(post)
+      console.log("firstName",firstName)
 
     //   _______________paypal conf :
     const initialOptions = {

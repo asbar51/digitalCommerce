@@ -155,9 +155,11 @@ const PostDetails = () => {
 
   const customerHandler = async (e) => {
     e.preventDefault();
+    console.log("firstName : ", firstName);
+    
 
     navigate(
-      `/checkout/${post?.Post?._id}/quantity/${QuantityNumber}/price/${post?.Post?.price}/${firstName}/${lastName}/${phoneNumber}/${email}`
+      `/checkout/${post?.Post?._id}/quantity/${QuantityNumber}/price/${post?.Post?.price}/${profile?.profile?.firstName}/${profile?.profile?.lastName}/${phoneNumber}/${email}`
       )
   }
   
@@ -236,12 +238,12 @@ const PostDetails = () => {
                       <div className='grid grid-cols-2 gap-3 p-2'>
                           <div>
                               <Label className='mb-1 font-bold text-left' >Firts Name :</Label>
-                              <Input required type="text" value={profile?.profile?.firstName || ""} onChange={(e) => setFirstName(e.target.value)}
+                              <Input required disabled type="text" value={profile?.profile?.firstName || ""} onChange={(e) => setFirstName(e.target.value)}
                                 placeholder='Firts name:'/>
                           </div>
                           <div>
                               <Label className='mb-1 font-bold text-left' >Last Name :</Label>
-                              <Input required type="text" value={profile?.profile?.lastName || ""} onChange={(e) => setLastName(e.target.value)} 
+                              <Input required disabled type="text" value={profile?.profile?.lastName || ""} onChange={(e) => setLastName(e.target.value)} 
                                 placeholder='Last name:' />
                           </div>
                       </div>
