@@ -86,7 +86,7 @@ const CheckoutPage = () => {
                 border-gray-300 border-2 max-md:w-[90%] max-lg:p-3 max-lg:w-[600px]'>
                 <div className=''>
                     <div className='flex bg-gray-300 p-3 rounded'>
-                        <img src={`http://localhost:3000/uploads/images/${post?.Post?.thumbnail}`} className='w-[40%] max-h-[150px]' alt="" />
+                        <img src={`https://digitalcommerce-backend.onrender.com/uploads/images/${post?.Post?.thumbnail}`} className='w-[40%] max-h-[150px]' alt="" />
                         <h1 className='w-auto ml-5 font-bold'>{post?.Post?.title}</h1>
                     </div>
                     <div className='flex justify-center gap-5 items-center gap-1 h-[70px] w-full'>

@@ -108,7 +108,7 @@ const Setting = () => {
                 <h1 className='font-bold text-[25px] text-center italic my-2'>UPDATE</h1>
                 <Avatar className="m-auto h-[80px] w-[80px] ">
                     {profile?.profile?.profilePicture !="img" && profile?.profile?.profilePicture !="undefined"?
-                    <AvatarImage src={`http://localhost:3000/uploads/images/${profile?.profile?.profilePicture}`} className="object-cover" /> :
+                    <AvatarImage src={`https://digitalcommerce-backend.onrender.com/uploads/images/${profile?.profile?.profilePicture}`} className="object-cover" /> :
                     <AvatarFallback>Avatar</AvatarFallback>       
                     // <AvatarFallback>{MyProfile[0].toUpperCase()}</AvatarFallback>       
                     }

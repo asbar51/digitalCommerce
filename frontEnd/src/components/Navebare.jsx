@@ -149,7 +149,7 @@ const Navebare = () => {
                 flex items-center justify-center font-bold">
                   <Avatar>
                     {profile?.profile?.profilePicture !="img" && profile?.profile?.profilePicture !="undefined"?
-                    <AvatarImage src={`http://localhost:3000/uploads/images/${profile?.profile?.profilePicture}`} className="object-cover"/> :
+                    <AvatarImage src={`https://digitalcommerce-backend.onrender.com/uploads/images/${profile?.profile?.profilePicture}`} className="object-cover"/> :
                     <AvatarFallback>{MyProfile[0].toUpperCase()}</AvatarFallback>}
                   </Avatar>
 

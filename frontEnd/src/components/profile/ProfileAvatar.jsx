@@ -6,7 +6,7 @@ const ProfileAvatar = ({MyProfile,avatar}) => {
   return (
     <div className='h-[100px] rounded-lg bg-blue-500 flex justify-center'>
         <Avatar>
-            <AvatarImage src={`http://localhost:3000/uploads/images/${avatar}`} />
+            <AvatarImage src={`https://digitalcommerce-backend.onrender.com/uploads/images/${avatar}`} />
             <AvatarFallback>{MyProfile}</AvatarFallback>
         </Avatar>
     </div>

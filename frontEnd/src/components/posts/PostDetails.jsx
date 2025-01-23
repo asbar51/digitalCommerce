@@ -185,7 +185,7 @@ const PostDetails = () => {
       {/*  */}
       <div className='grid grid-cols-12  gap-4'>
         <div className='xl:col-span-8 lg:col-span-8 max-md:col-span-12  md:col-span-12'>
-          <img src={`http://localhost:3000/uploads/images/${post?.Post?.thumbnail}`} className="w-full max-h-[450px] object-fill"/>
+          <img src={`https://digitalcommerce-backend.onrender.com/uploads/images/${post?.Post?.thumbnail}`} className="w-full max-h-[450px] object-fill"/>
         </div>
         <div className='grid xl:col-span-4 lg:col-span-4 max-md:col-span-12  md:col-span-12 h-auto border-[1px] border-gray-300 flex  flex-col p-5'>
           <div className='gap-5 h-auto py-3'>
@@ -369,7 +369,7 @@ const PostDetails = () => {
         <div className='flex my-4 items-center gap-3 '>
           { profile.profile ? <Avatar className="m-auto h-[50px] w-[50px] border-4 border-white">
             {profile?.profile?.profilePicture !="img" && profile?.profile?.profilePicture !="undefined"?
-            <AvatarImage src={`http://localhost:3000/uploads/images/${profile?.profile?.profilePicture}`} 
+            <AvatarImage src={`https://digitalcommerce-backend.onrender.com/uploads/images/${profile?.profile?.profilePicture}`} 
             className="object-cover"/> :
             <AvatarFallback>{MyProfile[0].toUpperCase()}</AvatarFallback>}
           </Avatar> : null
@@ -440,7 +440,7 @@ const PostDetails = () => {
               <div key={e._id} className='flex my-4 items-center gap-3 border-2 border-gray-200 p-3'>
                 <Avatar className="m-auto h-[50px] w-[50px] border-4 border-white">
                   {e.reviewerPicture !="img" && e.reviewerPicture !="undefined"?
-                  <AvatarImage src={`http://localhost:3000/uploads/images/${e.reviewerPicture}`} 
+                  <AvatarImage src={`https://digitalcommerce-backend.onrender.com/uploads/images/${e.reviewerPicture}`} 
                   className="object-cover"/> :
                   <AvatarFallback>{e.reviewerUsername[0].toUpperCase()}</AvatarFallback>}
                 </Avatar>

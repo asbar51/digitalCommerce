@@ -41,6 +41,8 @@ export const loginProfile = async (req,res) => {
 		user.password
 	)
     if (isPasswordValid) {
+        console.log("password is valid");
+        
         const token = jwt.sign({
             username: user.username,
             email: user.email
@@ -48,8 +50,8 @@ export const loginProfile = async (req,res) => {
 
         try {
             res.cookie('token', token, { httpOnly:true,maxAge:1000*60*60*24*30 });
-            // console.log('token',token)
-            // res.send('Cookie set successfully');
+            console.log('token',token)
+            res.send('Cookie set successfully');
           } catch (error) {
             console.log(error.message)
           }

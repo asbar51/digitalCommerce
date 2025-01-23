@@ -71,7 +71,7 @@ const MyOrders = () => {
         {posts!="logout" ? posts?.Posts?.map(p => (
           <TableRow key={ID++}>
             <TableCell className='flex gap-5'>
-                <img src={`http://localhost:3000/uploads/images/${p?.thumbnail}`} 
+                <img src={`https://digitalcommerce-backend.onrender.com/uploads/images/${p?.thumbnail}`} 
                 onClick={()=> navigate(`/posts/${p?.id}`)} className="w-[50px] h-[50px] cursor-pointer object-fill"/>
                 <div>
                     <h1 className='font-bold max-lg:text-[12px] '>{p?.title}</h1>

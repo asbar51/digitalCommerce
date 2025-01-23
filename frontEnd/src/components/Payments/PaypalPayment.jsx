@@ -11,7 +11,7 @@ const PaypalPayment = ({id,quantity,price,firstName,lastName,phoneNumber,email})
 
     const createOrder = (data) => {
         // Order is created on the server and the order id is returned
-        return fetch("http://localhost:3000/posts/api/orders", {
+        return fetch("https://digitalcommerce-backend.onrender.com/posts/api/orders", {
           method: "POST",
           credentials: "include",
            headers: {
@@ -34,7 +34,7 @@ const PaypalPayment = ({id,quantity,price,firstName,lastName,phoneNumber,email})
       };
       const onApprove = (data) => {
          // Order is captured on the server and the response is returned to the browser
-         return fetch(`http://localhost:3000/posts/api/orders/${data.orderID}/capture`, {
+         return fetch(`https://digitalcommerce-backend.onrender.com/posts/api/orders/${data.orderID}/capture`, {
           method: "POST",
           credentials: "include",
            headers: {

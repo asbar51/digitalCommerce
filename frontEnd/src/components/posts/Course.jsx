@@ -103,7 +103,7 @@ const Course = ({inCart,thumbnail,title,createdAt,price,ratings,id,profileUserna
 
         {
           (thumbnail?
-            <img src={`http://localhost:3000/uploads/images/${thumbnail}`} onClick={()=> navigate(`/posts/${id}`)} 
+            <img src={`https://digitalcommerce-backend.onrender.com/uploads/images/${thumbnail}`} onClick={()=> navigate(`/posts/${id}`)} 
               className="w-full max-sm:max-h-[300px]  sm:h-[350px] md:max-h-[230px] xl:max-h-[190px] rounded-lg cursor-pointer object-fill"/>
           : null)
         }
@@ -111,7 +111,7 @@ const Course = ({inCart,thumbnail,title,createdAt,price,ratings,id,profileUserna
           <CardDescription className='flex justify-between  text-[15px] font-bold'>
             <span className="flex items-center gap-1">
               {/* <Avatar className="h-[25px] w-[25px]">
-                <AvatarImage src={`http://localhost:3000/uploads/images/${profile.profile.profilePicture}`} />
+                <AvatarImage src={`https://digitalcommerce-backend.onrender.com/uploads/images/${profile.profile.profilePicture}`} />
                 <AvatarFallback>{instructor[0].toUpperCase()}</AvatarFallback>
               </Avatar> */}
               <span className="hover:underline cursor-pointer"
@@ -119,7 +119,7 @@ const Course = ({inCart,thumbnail,title,createdAt,price,ratings,id,profileUserna
                 <span className='flex items-center ml-3'>
                   <Avatar>
                       
-                      <AvatarImage src={`http://localhost:3000/uploads/images/${sellerAvatar}`} /> 
+                      <AvatarImage src={`https://digitalcommerce-backend.onrender.com/uploads/images/${sellerAvatar}`} /> 
                       {/* <AvatarFallback>{post.instructor[0].toUpperCase()}</AvatarFallback> */}
                   </Avatar>
                   <span className='font-bold p-3'>{instructor}</span>

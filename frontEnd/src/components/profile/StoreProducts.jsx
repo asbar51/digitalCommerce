@@ -53,11 +53,11 @@ const StoreProducts = () => {
         <div className=' m-auto w-[100%] max-[500px]:w-[100%] '>
             <div className='text-center mt-9 px-5 w-full h-[70px] bg-gradient-to-r from-[#007EF3] 
                 to-[#72A9DC] mb-[45px] my-3 min-[1024px]:ml-7 rounded-lg'>
-                {/* <img src={`http://localhost:3000/uploads/images/${posts.avatar}`} className="w-[110px] border-4 border-white h-[100px] m-auto rounded-full object-cover"/> */}
+                {/* <img src={`https://digitalcommerce-backend.onrender.com/uploads/images/${posts.avatar}`} className="w-[110px] border-4 border-white h-[100px] m-auto rounded-full object-cover"/> */}
                 <div className='relative top-5'>
                     <Avatar className="m-auto h-[80px] w-[80px] border-4 border-white">
                         {profile?.profile?.profilePicture !="img" && profile?.profile?.profilePicture !="undefined"?
-                        <AvatarImage src={`http://localhost:3000/uploads/images/${posts.avatar}`} className="object-cover"/> :
+                        <AvatarImage src={`https://digitalcommerce-backend.onrender.com/uploads/images/${posts.avatar}`} className="object-cover"/> :
                         <AvatarFallback>{username[0].toUpperCase()}</AvatarFallback>}
                     </Avatar>
                     <h1 className='font-bold '>{username.toUpperCase()}</h1>
