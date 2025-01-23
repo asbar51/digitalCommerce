@@ -22,7 +22,8 @@ app.use('/uploads', express.static('uploads'));
 app.use('/posts', postRouter)
 app.use('/profile', profileRouter)
 
-const connection_url = 'mongodb://localhost:27017/test';
+const connection_url = 'mongodb+srv://admin:admin@marketplace-data.wgefi.mongodb.net/marketplaceDB';
+// const connection_url = 'mongodb://localhost:27017/test';
 const port = process.env.PORT || 3000
 
 mongoose.connect(connection_url).then(() => {
