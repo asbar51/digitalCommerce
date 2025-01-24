@@ -28,40 +28,45 @@ export const addProfile = async (req,res) => {
     }
 }
 
-export const loginProfile = async (req,res) => {
-
+export const loginProfile = async (req, res) => {
     const formBody = req.body;
-    // console.log(formBody)
+
     const user = await profiles.findOne({
         username: formBody.username
-    })
-    if (!user) return res.status(404).json({error: 'Username Not Found' })
-    const isPasswordValid = await bcrypt.compare(
-		formBody.password,
-		user.password
-	)
+    });
+
+    if (!user) {
+        return res.status(404).json({ error: 'Username Not Found' });
+    }
+
+    const isPasswordValid = await bcrypt.compare(formBody.password, user.password);
+
     if (isPasswordValid) {
         console.log("password is valid");
-        
-        const token = jwt.sign({
-            username: user.username,
-            email: user.email
-        },process.env.ACCESS_TOKEN_SECRET)
+
+        const token = jwt.sign(
+            {
+                username: user.username,
+                email: user.email
+            },
+            process.env.ACCESS_TOKEN_SECRET
+        );
 
         try {
-            res.cookie('token', token, { httpOnly:true,maxAge:1000*60*60*24*30 });
-            console.log('token',token)
-            res.send('Cookie set successfully');
-          } catch (error) {
-            console.log(error.message)
-          }
+            res.cookie('token', token, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 30 });
+            console.log('token', token);
+        } catch (error) {
+            console.error(error.message);
+            return res.status(500).json({ error: 'Error setting cookie' });
+        }
 
-        //   console.log({status: 'correct',username: user.username ,email:user.email})
-        res.status(200).json({username: user.username ,email:user.email})
-    } else{
-        res.status(404).json({error:'password incorrect'})
+        // Send response once after setting the cookie
+        return res.status(200).json({ username: user.username, email: user.email });
+    } else {
+        return res.status(401).json({ error: 'Password incorrect' });
     }
-}
+};
+
 
 export const getProfile = async (req,res) => {
     try {
