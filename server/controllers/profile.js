@@ -53,7 +53,10 @@ export const loginProfile = async (req, res) => {
         );
 
         try {
-            res.cookie('token', token, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 30 });
+            res.cookie('token', token, { httpOnly: true,
+                secure: false,
+                sameSite: 'Lax',  
+                maxAge: 1000 * 60 * 60 * 24 * 30 });
             console.log('token', token);
         } catch (error) {
             console.error(error.message);
