@@ -54,8 +54,8 @@ export const loginProfile = async (req, res) => {
 
         try {
             res.cookie('token', token, { httpOnly: true,
-                secure: false,
-                sameSite: 'Lax',  
+                secure: true,
+                sameSite: 'None',  
                 maxAge: 1000 * 60 * 60 * 24 * 30 });
             console.log('token', token);
         } catch (error) {
