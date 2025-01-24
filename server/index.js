@@ -11,6 +11,7 @@ app.use(cors({
     origin:'http://localhost:5173',
     credentials:true
 }))
+app.set('trust proxy', 1);
 
 app.use(cookieParser())
 app.use(bodyParser.json({limit:"30mb",extended:"true" }))
